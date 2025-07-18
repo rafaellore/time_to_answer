@@ -1,4 +1,5 @@
-class ProfilesBackoffice::WelcomeController < ApplicationController
+class ProfilesBackoffice::WelcomeController < ProfilesBackofficeController
+  layout "profiles_backoffice"
   def index
   end
 end
