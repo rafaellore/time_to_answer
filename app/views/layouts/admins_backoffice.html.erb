@@ -66,10 +66,10 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+            <%= link_to admins_backoffice_welcome_index_path, class: "nav-link" do %>
+                <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
-                </a>
+            <% end %>
             </li>
 
             <!-- Divider -->
@@ -77,10 +77,10 @@
 
             <!-- Nav Item - Administradores -->
             <li class="nav-item">
-                <a class="nav-link" href="administradores.html">
-                    <i class="fas fa-fw fa-user-shield"></i>
+            <%= link_to admins_backoffice_admins_index_path, class: "nav-link" do %>
+                <i class="fas fa-fw fa-user-shield"></i>
                     <span>Administradores</span>
-                </a>
+            <% end %>
             </li>
 
             <!-- Divider -->
@@ -96,11 +96,11 @@
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper">
 
             <!-- Main Content -->
             <div id="content">
-
+               
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -160,26 +160,15 @@
                     </ul>
 
                 </nav>
+                
+                <%= yield %>
+                 
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-   admins backoffice
-    <%= yield %>
-
+            <div class="container-fluid">
             </div>
             <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
