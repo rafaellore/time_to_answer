@@ -1,19 +1,17 @@
 <section class="d-flex justify-content-center align-items-center mt-5">
   <div class="w-50">
     <h1 class="h3 mb-4 text-center">Editar administrador</h1>
-    <form class="user p-4">
+    <%= form_with(model: [:admins_backoffice, @admin], class: "user p-4", local: true) do |form| %>
       <div class="form-group mb-3">
-        <label for="email">Email</label>
-        <input type="email" class="form-control form-control-user mb-3" id="email" placeholder="Email">
-        <label for="password">Senha</label>
-        <input type="password" class="form-control form-control-user mb-3" id="password" placeholder="Senha">
-        <label for="confirmPassword">Confirmar senha</label>
-        <input type="password" class="form-control form-control-user mb-4" id="confirmPassword" placeholder="Confirmar senha">
+        <%= form.label :email, "Email" %>
+        <%= form.email_field :email, class: "form-control form-control-user mb-3", placeholder: "Email", id: "email" %>
+        <%= form.label :password, "Senha" %>
+        <%= form.password_field :password, class: "form-control form-control-user mb-3", placeholder: "Senha", id: "password" %>
+        <%= form.label :password_confirmation, "Confirmar senha" %>
+        <%= form.password_field :password_confirmation, class: "form-control form-control-user mb-4", placeholder: "Confirmar senha", id: "confirmPassword" %>
       </div>
-      <button type="submit" class="btn btn-primary btn-user btn-block">
-        Salvar
-      </button>
+      <%= form.submit "Salvar", class: "btn btn-primary btn-user btn-block" %>
       <hr>
-    </form>
+    <% end %>
   </div>
 </section>
