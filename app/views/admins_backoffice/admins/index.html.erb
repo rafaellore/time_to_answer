@@ -27,6 +27,9 @@
                     <td><%= admin.email %></td>
                     <td><%= l(admin.created_at, format: :short) %></td>
                     <td>
+                      <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-primary btn-circle" do %>
+                        <i class="fas fa-edit"></i>
+                      <% end %>
                       <%= link_to admins_backoffice_admin_path(admin), 
                         method: :delete, 
                         class: "btn btn-danger btn-circle", 
@@ -38,6 +41,9 @@
                 <% end %>
               </tbody>
             </table>
+            <div class="text-center">
+              <%= paginate @admins %>
+            </div>
           </div>
         </div>
       </div>
