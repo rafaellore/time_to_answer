@@ -1,0 +1,52 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Lista de Assuntos/Áreas</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+        <div class="row">
+          <div class="col-sm-12">
+            <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Descrição</th>
+                  <th>Criado em</th>
+                  <th>
+                    <%= link_to new_admins_backoffice_admin_path, class:"btn btn-success btn-circle" do %>
+                      <i class="fa fa-plus"></i>
+                    <% end %>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @subjects.each_with_index do |subject, index| %>
+                  <tr class="<%= index.even? ? 'even' : 'odd' %>">
+                    <td><%= subject.id %></td>
+                    <td><%= subject.description %></td>
+                    <td><%= l(subject.created_at, format: :short) %></td>
+                    <td>
+                      <%= link_to edit_admins_backoffice_subject_path(subject), class: "btn btn-primary btn-circle" do %>
+                        <i class="fas fa-edit"></i>
+                      <% end %>
+                      <%= link_to admins_backoffice_subject_path(subject), 
+                        method: :delete, 
+                        class: "btn btn-danger btn-circle", 
+                        data: { turbo_method: :delete, turbo_confirm: "Deseja realmente excluir esse assunto?" } do %>
+                        <i class="fas fa-trash-alt"></i>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <div class="text-center">
+              <%= paginate @subjects %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
