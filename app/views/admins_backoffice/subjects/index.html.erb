@@ -11,7 +11,7 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Descrição</th>
+                  <th><%= translate_attribute(@subjects, :description) %></th>
                   <th>Criado em</th>
                   <th>
                     <%= link_to new_admins_backoffice_subject_path, class:"btn btn-success btn-circle" do %>
