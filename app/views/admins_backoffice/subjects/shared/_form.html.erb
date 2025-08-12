@@ -1,6 +1,6 @@
 <section class="d-flex justify-content-center align-items-center mt-5">
   <div class="w-50">
-    <h1 class="h3 mb-4 text-center"><%= action_message %> Assunto</h1>
+    <h1 class="h3 mb-4 text-center"><%= @subject.model_name.human %></h1>
     <% if @subject.errors.any? %>
       <div class="alert alert-danger alert-dismissible fade show">
         <h4 class="mb-3">Ocorreram os seguintes erros:</h4>
