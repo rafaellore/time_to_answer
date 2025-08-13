@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:rafaellore/time_to_answer.git",
   "author": "rafaellore <birdneon3@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@nathanvda/cocoon": "^1.2.14"
+  }
 }

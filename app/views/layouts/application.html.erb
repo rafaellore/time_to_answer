@@ -7,23 +7,36 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= yield :head %>
-
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-3gJwYpO4xjK3q7WJf8h8a6YItnO6FgD7E9JpQd2Z5hU="
+            crossorigin="anonymous"></script>
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
     application layout
     <%= yield %>
+    <!-- Bootstrap core JavaScript-->
+    <script src="/templates/startbootstrap-sb-admin-2/vendor/jquery/jquery.min.js"></script>
+    <script src="/templates/startbootstrap-sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/templates/startbootstrap-sb-admin-2/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="/templates/startbootstrap-sb-admin-2/js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="/templates/startbootstrap-sb-admin-2/vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="/templates/startbootstrap-sb-admin-2/js/demo/chart-area-demo.js"></script>
+    <script src="/templates/startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js"></script>
+    <!-- Bootstrap JS via CDN (inclui Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
   </body>
 </html>
